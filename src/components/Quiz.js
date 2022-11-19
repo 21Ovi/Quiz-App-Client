@@ -1,4 +1,5 @@
 import React from "react";
+import Questions from "./Questions";
 
 const Quiz = () => {
   // Next button event handler
@@ -16,6 +17,7 @@ const Quiz = () => {
       <h1 className="title text-light">Quiz Application</h1>
 
       {/* display questions */}
+      <Questions />
 
       <div className="grid">
         <button className="btn prev" onClick={onPrev}>
