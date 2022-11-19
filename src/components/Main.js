@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
+import "../styles/Main.css";
+
 const Main = () => {
   const inputRef = useRef(null);
 
@@ -17,7 +19,12 @@ const Main = () => {
         <li>The result will be declared at the end of the quiz</li>
       </ol>
       <form id="form">
-        <input ref={inputRef} type="text" placeholder="username*" />
+        <input
+          ref={inputRef}
+          type="text"
+          className="userid"
+          placeholder="username*"
+        />
       </form>
       <div className="start">
         <Link className="btn" to={"quiz"}>
