@@ -5,7 +5,7 @@ import data from "../database/data";
 const Questions = () => {
   const [check, setCheck] = useState(undefined);
 
-  const questions = data[1];
+  const questions = data[0];
 
   useEffect(() => {
     // console.log(questions);
