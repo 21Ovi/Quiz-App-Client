@@ -8,7 +8,7 @@ const Questions = () => {
   const questions = data[1];
 
   useEffect(() => {
-    console.log(questions);
+    // console.log(questions);
   }, []);
 
   const onSelect = () => {
