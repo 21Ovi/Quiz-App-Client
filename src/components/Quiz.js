@@ -26,7 +26,10 @@ const Quiz = () => {
       // update the trace value by one using MoveNextQuestion
       dispatch(MoveNextQuestion());
 
-      dispatch(PushAnswer(check));
+      // insert a new result in the array
+      if (result.length <= trace) {
+        dispatch(PushAnswer(check));
+      }
     }
   };
 
@@ -40,7 +43,7 @@ const Quiz = () => {
     }
   };
 
-  const onCheck = (check) => {
+  const onChecked = (check) => {
     console.log(check);
     setCheck(check);
   };
@@ -55,7 +58,7 @@ const Quiz = () => {
       <h1 className="title text-light">Quiz Application</h1>
 
       {/* display questions */}
-      <Questions onCheck={onCheck} />
+      <Questions onChecked={onChecked} />
 
       <div className="grid">
         <button className="btn prev" onClick={onPrev}>
