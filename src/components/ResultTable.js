@@ -9,12 +9,12 @@ const ResultTable = () => {
             <td>Name</td>
             <td>Attempts</td>
             <td>Earn Points</td>
-            <td>REsult</td>
+            <td>Result</td>
           </tr>
         </thead>
         <tbody>
           <tr className="table-body">
-            <td>Daily Tuition</td>
+            <td>Mohammad Ovesh</td>
             <td>03</td>
             <td>20</td>
             <td>Passed</td>

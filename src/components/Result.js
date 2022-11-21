@@ -25,13 +25,14 @@ const Result = () => {
   const state = useSelector((state) => state);
 
   useEffect(() => {
-    console.log(flag);
+    console.log(userName);
   });
 
   const totalPoints = queue.length * 10;
   const attempts = attempts_Number(result);
   const earnPoints = earnPoints_Number(result, answers, 10);
   const flag = flagResult(totalPoints, earnPoints);
+  const userName = useSelector((state) => state.result.userId);
 
   const onRestart = () => {
     dispatch(resetAllAction());
@@ -43,7 +44,7 @@ const Result = () => {
       <div className="result flex-center">
         <div className="flex">
           <span>Username</span>
-          <span className="bold">Daily Tutions</span>
+          <span className="bold">{userName}</span>
         </div>
         <div className="flex">
           <span>Total Quiz Points</span>

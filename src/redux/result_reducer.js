@@ -31,6 +31,7 @@ export const {
   pushResultAction,
   resetResultAction,
   updateResultAction,
+  setUserId,
 } = resultReducer.actions;
 
 export default resultReducer.reducer;
