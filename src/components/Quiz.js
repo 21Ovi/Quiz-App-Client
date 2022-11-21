@@ -20,8 +20,6 @@ const Quiz = () => {
 
   // Next button event handler
   const onNext = () => {
-    console.log("on next click");
-
     if (trace < queue.length) {
       // update the trace value by one using MoveNextQuestion
       dispatch(MoveNextQuestion());
@@ -35,8 +33,6 @@ const Quiz = () => {
 
   // Previous button event handler
   const onPrev = () => {
-    console.log("on prev click");
-
     if (trace > 0) {
       // update the trace value by one using MovePrevQuestion
       dispatch(MovePrevtQuestion());
@@ -61,9 +57,13 @@ const Quiz = () => {
       <Questions onChecked={onChecked} />
 
       <div className="grid">
-        <button className="btn prev" onClick={onPrev}>
-          Prev
-        </button>
+        {trace > 0 ? (
+          <button className="btn prev" onClick={onPrev}>
+            Prev
+          </button>
+        ) : (
+          <div></div>
+        )}
         <button className="btn next" onClick={onNext}>
           Next
         </button>

@@ -8,6 +8,7 @@ import { updateResult } from "../hooks/setResult";
 const Questions = ({ onChecked }) => {
   const [checked, setChecked] = useState(undefined);
   const { trace } = useSelector((state) => state.questions);
+  const result = useSelector((state) => state.result.result);
 
   const [{ isLoading, apiData, serverError }] = useFetchQuestion();
 
@@ -23,6 +24,7 @@ const Questions = ({ onChecked }) => {
   const onSelect = (i) => {
     onChecked(i);
     setChecked(i);
+    dispatch(updateResult({ trace, checked }));
   };
 
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
@@ -45,7 +47,9 @@ const Questions = ({ onChecked }) => {
             <label className="text-primary" htmlFor={`q${i}-options`}>
               {q}
             </label>
-            <div className="check"></div>
+            <div
+              className={`check ${result[trace] === i ? "checked" : ""}`}
+            ></div>
           </li>
         ))}
       </ul>
