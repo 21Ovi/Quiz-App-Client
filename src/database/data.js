@@ -35,22 +35,23 @@ export default [
     id: 6,
     question:
       "A trader buys sugar for $1200 and sell it for $1500, per sack of sugar he makes a profit of $50. How many sacks of sugar did he have?",
-    options: ["Friday", "Thursday", "Monday"],
+    options: ["12", "6", "15"],
   },
   {
     id: 7,
     question:
       "An airplane crashed into a field and every single person died except two how come?",
-    options: ["6", "12", "15"],
+    options: [
+      "Because they were married and not single.",
+      "Because they were pilots",
+      "they were rescued by someone",
+    ],
   },
   {
     id: 8,
-    question: "",
-    options: [
-      "Because they were pilots",
-      "Because they were married and not single.",
-      "they were rescued by someone",
-    ],
+    question:
+      "A boy and a doctor were fishing. The boy is the doctor's son, but the doctor isn't the boy's father. Who is the doctor?",
+    options: ["Grand Father", "Mother", "Son"],
   },
   {
     id: 9,
