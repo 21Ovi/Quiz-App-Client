@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import ResultTable from "../ResultTable";
+
+import ResultTable from "./ResultTable";
 
 //import actions
 import { resetAllAction } from "../redux/question_reducer";
