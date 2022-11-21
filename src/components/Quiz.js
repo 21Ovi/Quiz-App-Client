@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Questions from "./Questions";
 
 // redux store import
@@ -7,6 +7,8 @@ import { MoveNextQuestion, MovePrevtQuestion } from "../hooks/FetchQuestion";
 import { PushAnswer } from "../hooks/setResult";
 
 const Quiz = () => {
+  const [check, setCheck] = useState(undefined);
+
   const state = useSelector((state) => state);
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ const Quiz = () => {
       // update the trace value by one using MoveNextQuestion
       dispatch(MoveNextQuestion());
 
-      dispatch(PushAnswer(1));
+      dispatch(PushAnswer(check));
     }
   };
 
@@ -37,12 +39,17 @@ const Quiz = () => {
     }
   };
 
+  const onCheck = (check) => {
+    console.log(check);
+    setCheck(check);
+  };
+
   return (
     <div className="container">
       <h1 className="title text-light">Quiz Application</h1>
 
       {/* display questions */}
-      <Questions />
+      <Questions onCheck={onCheck} />
 
       <div className="grid">
         <button className="btn prev" onClick={onPrev}>
