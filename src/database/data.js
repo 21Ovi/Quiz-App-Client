@@ -1,6 +1,15 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
+    id: 0,
+    question: "WHich serial did anam completed",
+    options: [
+      "Saas bhi kabhi bahoo thii",
+      "Some korean shit",
+      "every series in the world",
+    ],
+  },
+  {
     id: 1,
     question: "Javascript is an _______ language",
     options: ["Object-Oriented", "Object-Based", "Procedural"],
