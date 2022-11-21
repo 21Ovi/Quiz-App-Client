@@ -14,10 +14,6 @@ const Quiz = () => {
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(result);
-  });
-
   // Next button event handler
   const onNext = () => {
     if (trace < queue.length) {
@@ -29,6 +25,9 @@ const Quiz = () => {
         dispatch(PushAnswer(check));
       }
     }
+
+    // reset the value of the checked variable
+    setCheck(undefined);
   };
 
   // Previous button event handler
