@@ -24,16 +24,19 @@ export const CheckUserExist = ({ children }) => {
 };
 
 // Get server data
+// export const getServerData = async (url, callback) => {
+//   const data = await (await axios.get(url))?.data;
+//   console.log(data);
+//   return callback ? callback(data) : data;
+// };
+
 export const getServerData = async (url, callback) => {
-  const data = await axios.get(url)?.data;
-  console.log(data);
+  const data = await (await axios.get(url))?.data;
   return callback ? callback(data) : data;
 };
-// getServerData("http://localhost:5000/api/questions");
 
 // Post server data
 export const postServerData = async (url, result, callback) => {
   const data = await axios.post(url, result)?.data;
-  console.log(data);
   return callback ? callback(data) : data;
 };
