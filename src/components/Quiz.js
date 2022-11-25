@@ -39,7 +39,7 @@ const Quiz = () => {
   };
 
   const onChecked = (check) => {
-    console.log(check);
+    // console.log(check);
     setCheck(check);
   };
 
